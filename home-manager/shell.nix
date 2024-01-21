@@ -51,7 +51,7 @@ shell applications
     pkgs.pciutils  # for lspci
     pkgs.gptfdisk  # formatting tool for GPT disks
     pkgs.clinfo  # info tool for OpenCL
-  ];:
+  ];
 
   programs.git = {
     enable = true;
