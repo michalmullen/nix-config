@@ -5,10 +5,6 @@ shell applications
 { inputs, inputs', self', pkgs, lib, res, config, ... }:
 
 {
-  imports = [
-    inputs.nix-index-database.hmModules.nix-index
-  ];
-
   home.packages = [
     pkgs.pandoc  # universal document converter
     pkgs.imagemagick  # image converter etc.
