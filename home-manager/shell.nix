@@ -10,7 +10,6 @@ shell applications
     pkgs.imagemagick  # image converter etc.
 
     # tools
-    pkgs.nano  # simple file editor for quick edits
     pkgs.curl  # download files etc.
     pkgs.qrtool  # generate QR codes from command line
     pkgs.fd  # better find
@@ -28,12 +27,10 @@ shell applications
     pkgs.unzip  # extract zip archives
     pkgs.nix-tree  # explore dependencies of Nix derivations
     pkgs.gojq  # JSON processor, like jq, but in Go and compatible with YAML
-    pkgs.jqp  # jq playground
     pkgs.age  # encryption tool
     pkgs.parallel  # execute commands in parallel
     pkgs.e2fsprogs  # ext2/3/4 tools, and also chattr
     pkgs.openssl  # useful for secret generation etc
-    pkgs.swaks  # useful tool for email and SMTP testing
 
     # devops
     pkgs.kubectl
