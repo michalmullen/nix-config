@@ -25,16 +25,10 @@ Lenovo ThinkPad Yoga 460
     grub.devices =
   };
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-
-  boot.initrd.luks.devices."luks-1e1c7339-e378-448a-ac29-0b01ed47beaf".device = "/dev/disk/by-uuid/1e1c7339-e378-448a-ac29-0b01ed47beaf";
-
-  programs.light.enable = true;  # for backlight control
-
-  networking.hostName = "framework";
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -44,7 +38,12 @@ Lenovo ThinkPad Yoga 460
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  virtualization.virtualbox.guest.enable = true;
+
+
+  programs.light.enable = true;  # for backlight control
+
+  networking.hostName = "framework";
 
   system.stateVersion = "22.11";
 
