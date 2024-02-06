@@ -22,7 +22,6 @@ Lenovo ThinkPad Yoga 460
       configurationLimit = 12;  # maximum number of latest NixOS generations to show
     };
     efi.canTouchEfiVariables = true;
-    grub.devices =
   };
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];

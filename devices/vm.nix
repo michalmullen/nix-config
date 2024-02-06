@@ -15,15 +15,9 @@ Lenovo ThinkPad Yoga 460
     ../nixos/users.nix
   ];
 
-  # use systemd-boot as bootloader
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 12;  # maximum number of latest NixOS generations to show
-    };
-    efi.canTouchEfiVariables = true;
-    grub.devices =
-  };
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
 
   boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
@@ -43,7 +37,7 @@ Lenovo ThinkPad Yoga 460
 
   programs.light.enable = true;  # for backlight control
 
-  networking.hostName = "framework";
+  networking.hostName = "vm";
 
   system.stateVersion = "22.11";
 
