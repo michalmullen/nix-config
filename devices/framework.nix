@@ -2,13 +2,13 @@
 framework 13 laptop
 */
 
-{ pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
   imports = [
     ../nixos/desktop.nix
-    ../nixos/filesystems.nix
-    ../nixos/nix.nix
+    # ../nixos/filesystems.nix
+    # ../nixos/nix.nix
     ../nixos/sshd.nix
     ../nixos/users.nix
   ];
