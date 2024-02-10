@@ -3,7 +3,7 @@
 {
   imports = [ inputs.impermanence.nixosModules.home-manager.impermanence ];
 
-  home.persistence."/persist/home/eisfunke" = {
+  home.persistence."/persist/home/michalmullen" = {
     directories = [
       "download"  # persistent downloads
       "repos"  # all Git projects

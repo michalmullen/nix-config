@@ -1,7 +1,5 @@
 /*
-miranda: my notebook
-
-Lenovo ThinkPad Yoga 460
+framework 13 laptop
 */
 
 { pkgs, ... }:
@@ -24,12 +22,26 @@ Lenovo ThinkPad Yoga 460
     efi.canTouchEfiVariables = true;
   };
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices."luks-1e1c7339-e378-448a-ac29-0b01ed47beaf".device = "/dev/disk/by-uuid/1e1c7339-e378-448a-ac29-0b01ed47beaf";
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/28ae66c4-f326-46fa-9079-e075a3900dc3";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/D64C-D3CF";
+      fsType = "vfat";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/d241602b-8107-4b44-b48a-6020b2ad6afb"; }
+    ];
+
 
   programs.light.enable = true;  # for backlight control
 
@@ -49,7 +61,7 @@ Lenovo ThinkPad Yoga 460
 
   home-manager.users.michalmullen = {
     imports = [
-      ../home/base.nix
+      ../home/home.nix
       ../home/shell.nix
     ];
     michalmullen = {

@@ -9,7 +9,7 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
   imports = [ inputs.impermanence.nixosModules.impermanence ];
 
   options = {
-    eisfunke.encryption = lib.mkOption {
+    michalmullen.encryption = lib.mkOption {
       description = "Whether to enable device encryption.";
       default = true;
       type = lib.types.bool;
@@ -30,7 +30,7 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
     };
 
     # decrypt the main device with LUKS
-    boot.initrd.luks.devices = lib.mkIf config.eisfunke.encryption {
+    boot.initrd.luks.devices = lib.mkIf config.michalmullen.encryption {
       "main" = {
         device = "/dev/disk/by-partlabel/main";
         # allow SSD TRIM commands (note that this is a security tradeoff)
