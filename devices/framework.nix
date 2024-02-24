@@ -9,7 +9,7 @@ framework 13 laptop
     ../nixos/desktop.nix
     ../nixos/filesystem.nix
     # ../nixos/nix.nix
-    ../nixos/sshd.nix
+    # ../nixos/sshd.nix
     ../nixos/users.nix
   ];
 
@@ -48,8 +48,6 @@ framework 13 laptop
     imports = [
       ../home/home.nix
       ../home/shell.nix
-      ../home/filesystem.nix
-      ../home/user.nix
     ];
     deploymentType = "nixos";
     home.stateVersion = "23.04";
