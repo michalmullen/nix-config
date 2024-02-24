@@ -15,14 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
-
-    home-manager-unstable = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     hardware.url = "github:NixOS/nixos-hardware";
 
     impermanence.url = "github:nix-community/impermanence";
