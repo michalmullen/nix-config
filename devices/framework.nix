@@ -44,9 +44,6 @@ framework 13 laptop
 
   system.stateVersion = "23.04";
 
-  disko.nixosModules.default
-        (import ./disko.nix { device = "/dev/vda"; })
-
   home-manager.users.michalmullen = {
     imports = [
       ../home/home.nix
