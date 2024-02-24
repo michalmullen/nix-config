@@ -27,6 +27,5 @@ config for users and home-manager
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs inputs' self' system res; };
-    users.michalmullen.home.groupname = "users";
   };
 }
