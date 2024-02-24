@@ -49,7 +49,6 @@ framework 13 laptop
       ../home/home.nix
       ../home/shell.nix
     ];
-    deploymentType = "nixos";
     home.stateVersion = "23.04";
   };
 }
