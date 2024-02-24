@@ -75,8 +75,8 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./devices/framework.nix
-          disko.nixosModules.default
-            (import ./disko.nix { device = "/dev/nvme0n1"; })
+          inputs.disko.nixosModules.default
+          (import ./disko.nix { device = "/dev/nvme0n1"; })
         ];
       };
       vm = nixpkgs.lib.nixosSystem {
