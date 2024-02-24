@@ -95,7 +95,7 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
             device = "/dev/disk/by-uuid/XXXX-XXXX";
             fsType = "vfat";
         };
-    }
+    };
 
     # can be created with btrfs mkswapfile
     #  swapDevices = [ { device = "/swap/swapfile"; } ];
