@@ -7,7 +7,7 @@ framework 13 laptop
 {
   imports = [
     ../nixos/desktop.nix
-    # ../nixos/filesystems.nix
+    ../nixos/filesystems.nix
     # ../nixos/nix.nix
     ../nixos/sshd.nix
     ../nixos/users.nix
