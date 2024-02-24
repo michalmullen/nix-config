@@ -129,5 +129,5 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
     # allows other users to access FUSE mounts
     # necessary for allowOther in home.persistence
     #  programs.fuse.userAllowOther = true;
-  }
+  };
 }
