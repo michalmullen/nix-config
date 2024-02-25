@@ -2,7 +2,7 @@
 https://github.com/nix-community/impermanence?tab=readme-ov-file
 */
 
-{ ... }:
+{ lib, ... }:
 
 {
   boot.initrd.postDeviceCommands = lib.mkAfter ''
