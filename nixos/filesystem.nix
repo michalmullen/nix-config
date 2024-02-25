@@ -2,7 +2,7 @@
 https://github.com/nix-community/impermanence?tab=readme-ov-file
 */
 
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # regularly run TRIM
