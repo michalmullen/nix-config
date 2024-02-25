@@ -2,12 +2,9 @@
 https://github.com/nix-community/impermanence?tab=readme-ov-file
 */
 
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
-  # regularly run TRIM
-  services.fstrim.enable = true;
-
   boot.initrd.postDeviceCommands = lib.mkAfter ''
       mkdir /btrfs_tmp
       mount /dev/root_vg/root /btrfs_tmp
@@ -41,7 +38,6 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
       "/var/log"  # system logs
       "/var/lib/systemd"  # various state for systemd such as persistent timers
       "/var/lib/nixos"
-      # "/var/lib/docker"  # TODO: remove once I got rid of Docker on sapphire
       "/var/tmp"
       "/var/lib/bluetooth"  # bluetooth connection state stuff
     ];
