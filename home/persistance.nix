@@ -20,7 +20,6 @@
     ];
     files = [
       ".bash_history"
-    #   ".config/nushell/history.txt"  # nushell history
     ];
     allowOther = true;
   };

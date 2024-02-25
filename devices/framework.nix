@@ -7,7 +7,7 @@ framework 13 laptop
 {
   imports = [
     ../nixos/desktop.nix
-    ../nixos/filesystem.nix
+    (import ../nixos/filesystem.nix{ config.fileSystems."/boot".device = "/dev/nvme0n1"; })
     # ../nixos/nix.nix
     # ../nixos/sshd.nix
     ../nixos/users.nix
