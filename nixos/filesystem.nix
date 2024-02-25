@@ -2,7 +2,7 @@
 https://github.com/nix-community/impermanence?tab=readme-ov-file
 */
 
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   # use impermanence for root on tmpfs
