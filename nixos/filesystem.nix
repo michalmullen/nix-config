@@ -6,10 +6,10 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
 
 {
   # use impermanence for root on tmpfs
-  imports = [ inputs.impermanence.nixosModules.impermanence ];
+  imports = [  inputs.impermanence.nixosModules.home-manager.impermanencee ];
 
-  # # regularly run TRIM
-  # services.fstrim.enable = true;
+  # regularly run TRIM
+  services.fstrim.enable = true;
 
   boot.initrd.postDeviceCommands = lib.mkAfter ''
       mkdir /btrfs_tmp

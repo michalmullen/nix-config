@@ -3,7 +3,7 @@
 {
   imports = [ inputs.impermanence.nixosModules.home-manager.impermanence ];
 
-  home.persistence."/persist/home/michalmullen" = {
+  home.persistence."/persist/home/" = {
     directories = [
       "download"  # persistent downloads
       "repos"  # all Git projects
@@ -13,7 +13,7 @@
       ".mozilla"  # Firefox
       ".local/share/systemd"  # various state for systemd such as persistent timers
       {
-        directory = ".local/share/containers";
+        directory = ".local/share/Steam";
         method = "symlink";
       }
       ".cache"  # is persisted, but kept clean with systemd-tmpfiles, see below
