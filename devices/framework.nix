@@ -48,6 +48,7 @@ framework 13 laptop
     imports = [
       ../home/home.nix
       ../home/shell.nix
+      ../home/persistance.nix
     ];
     home.stateVersion = "24.05";
   };
