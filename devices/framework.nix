@@ -2,14 +2,14 @@
 framework 13 laptop
 */
 
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, inputs, ... }:
 
 {
   imports = [
     ../nixos/desktop.nix
     (import ../nixos/filesystem.nix{ config.fileSystems."/boot".device = "/dev/nvme0n1"; })
     # ../nixos/nix.nix
-    # ../nixos/sshd.nix
+    ../nixos/sshd.nix
     ../nixos/users.nix
   ];
 
