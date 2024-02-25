@@ -18,11 +18,6 @@
     hardware.url = "github:NixOS/nixos-hardware";
 
     impermanence.url = "github:nix-community/impermanence";
-
-
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    # nix-colors.url = "github:misterio77/nix-colors";
   };
 
    outputs = {nixpkgs, ...} @ inputs:
@@ -31,10 +26,11 @@
       specialArgs = {inherit inputs;};
       modules = [
         inputs.disko.nixosModules.default
-        (import ./disko.nix { device = "/dev/vda"; })
-        ./devices/framework.nix              
         inputs.home-manager.nixosModules.default
         inputs.impermanence.nixosModules.impermanence
+        (import ./disko.nix { device = "/dev/vda"; })
+        
+        ./devices/framework.nix
       ];
     };
   };
