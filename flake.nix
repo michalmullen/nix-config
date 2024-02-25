@@ -64,7 +64,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       framework = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs;};
         modules = [
           inputs.disko.nixosModules.default
           (import ./disko.nix { device = "/dev/nvme0n1"; })
@@ -73,7 +73,7 @@
         ];
       };
       vm = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs;};
         modules = [
           ./devices/vm.nix
         ];
