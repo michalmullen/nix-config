@@ -5,9 +5,6 @@ https://github.com/nix-community/impermanence?tab=readme-ov-file
 { pkgs, lib, inputs, ... }:
 
 {
-  # use impermanence for root on tmpfs
-  imports = [  inputs.impermanence.nixosModules.home-manager.impermanencee ];
-
   # regularly run TRIM
   services.fstrim.enable = true;
 
